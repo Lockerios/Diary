@@ -64,7 +64,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! TextItemTableViewCell
 
         let entity = dataSource[indexPath.row] as? ItemEntity
-        cell.textPreviewLabel.text =  entity?.itemString
+        cell.textPreviewLabel.text =  entity?.itemString.string
         
         return cell
     }

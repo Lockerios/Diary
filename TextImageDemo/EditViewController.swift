@@ -32,7 +32,7 @@ class EditViewController: UIViewController, UITextViewDelegate, UIImagePickerCon
         textView.inputAccessoryView = toolbar
         
         if (entity != nil) {
-            textView.text = entity?.itemString
+            textView.attributedText = entity?.itemString
         }
         
         saveBBI.enabled = textView.text.characters.count > 0
@@ -81,7 +81,7 @@ class EditViewController: UIViewController, UITextViewDelegate, UIImagePickerCon
     }
     
     @IBAction func p_save(sender: AnyObject) {
-        ItemModel.sharedItemModel.p_addItem(ItemEntity.init(itemString: textView.text))
+        ItemModel.sharedItemModel.p_addItem(ItemEntity.init(itemString: textView.attributedText))
         
         self.navigationController?.popViewControllerAnimated(true)
     }
@@ -91,7 +91,7 @@ class EditViewController: UIViewController, UITextViewDelegate, UIImagePickerCon
     //MARK: UITextViewDelegate
     
     func textViewDidChange(textView: UITextView) {
-        saveBBI.enabled = textView.text.characters.count > 0
+        saveBBI.enabled = textView.attributedText.string.characters.count > 0
     }
     
     //MARK: UIImagePickerControllerDelegate
