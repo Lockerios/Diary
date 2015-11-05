@@ -108,6 +108,10 @@ class EditViewController: UIViewController, UITextViewDelegate, UIImagePickerCon
         editAtt.insertAttributedString(imageAtt, atIndex: textView.selectedRange.location)
         
         textView.attributedText = editAtt as! NSAttributedString
+        
+        picker.dismissViewControllerAnimated(true) { () -> Void in
+            
+        }
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
