@@ -64,6 +64,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! TextItemTableViewCell
 
         let entity = dataSource[indexPath.row] as? ItemEntity
+        
+        //TODO: 没有设计图片预览，所以只会预览文字
+        
         cell.textPreviewLabel.text =  entity?.itemString.string
         
         return cell

@@ -91,6 +91,8 @@ class EditViewController: UIViewController, UITextViewDelegate, UIImagePickerCon
     //MARK: UITextViewDelegate
     
     func textViewDidChange(textView: UITextView) {
+        //TODO: 暂时不支持纯图保存
+        
         saveBBI.enabled = textView.attributedText.string.characters.count > 0
     }
     

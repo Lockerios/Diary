@@ -12,7 +12,7 @@ private let sharedInstance = ItemModel()
 
 class ItemEntity {
     
-    //没有设计 ID 之类的识别，所以如果编辑，会多一个
+    //TODO: 没有设计 ID 之类的识别，所以如果编辑，会多一个
     
     var itemString = NSAttributedString()
     
