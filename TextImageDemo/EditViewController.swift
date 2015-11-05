@@ -8,13 +8,14 @@
 
 import UIKit
 
-class EditViewController: UIViewController, UITextViewDelegate {
+class EditViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var saveBBI: UIBarButtonItem!
     
     var toolbar: UIToolbar!
     var entity: ItemEntity?
+    var pickerVC: UIImagePickerController!
     
     //MARK: - Lifecycle
     
@@ -35,12 +36,13 @@ class EditViewController: UIViewController, UITextViewDelegate {
         }
         
         saveBBI.enabled = textView.text.characters.count > 0
+        
+        textView.becomeFirstResponder()
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        textView.becomeFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,7 +66,14 @@ class EditViewController: UIViewController, UITextViewDelegate {
     }
     
     func p_addImage() {
-        
+        if (pickerVC==nil) {
+            pickerVC = UIImagePickerController()
+            pickerVC.delegate = self
+        }
+     
+        self.presentViewController(pickerVC, animated: true) { () -> Void in
+            
+        }
     }
     
     func p_editSetup(entity: ItemEntity) {
@@ -83,5 +92,27 @@ class EditViewController: UIViewController, UITextViewDelegate {
     
     func textViewDidChange(textView: UITextView) {
         saveBBI.enabled = textView.text.characters.count > 0
+    }
+    
+    //MARK: UIImagePickerControllerDelegate
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        print(image)
+        
+        let imageTA = NSTextAttachment()
+        imageTA.image = image
+        
+        let imageAtt = NSAttributedString(attachment: imageTA)
+        
+        let editAtt = textView.attributedText.mutableCopy()
+        editAtt.insertAttributedString(imageAtt, atIndex: textView.selectedRange.location)
+        
+        textView.attributedText = editAtt as! NSAttributedString
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true) { () -> Void in
+            
+        }
     }
 }
