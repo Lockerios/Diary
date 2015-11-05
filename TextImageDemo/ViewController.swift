@@ -77,6 +77,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("\(indexPath.row) selected")
+        
+        let entity = dataSource[indexPath.row] as? ItemEntity
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("EditViewController") as! EditViewController
+        
+        vc.p_editSetup(entity!)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

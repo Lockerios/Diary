@@ -14,13 +14,12 @@ class EditViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var saveBBI: UIBarButtonItem!
     
     var toolbar: UIToolbar!
+    var entity: ItemEntity?
     
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        saveBBI.enabled = false
         
         toolbar = UIToolbar(frame: CGRectMake(0,0,SCREEN_WIDTH,44))
         toolbar.items = [
@@ -28,7 +27,14 @@ class EditViewController: UIViewController, UITextViewDelegate {
             UIBarButtonItem.init(barButtonSystemItem: .FlexibleSpace, target: self, action: nil),
             UIBarButtonItem.init(title: "收起", style: .Plain, target: self, action: Selector("p_hideKB")),
         ]
+        
         textView.inputAccessoryView = toolbar
+        
+        if (entity != nil) {
+            textView.text = entity?.itemString
+        }
+        
+        saveBBI.enabled = textView.text.characters.count > 0
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -59,6 +65,10 @@ class EditViewController: UIViewController, UITextViewDelegate {
     
     func p_addImage() {
         
+    }
+    
+    func p_editSetup(entity: ItemEntity) {
+        self.entity = entity
     }
     
     @IBAction func p_save(sender: AnyObject) {

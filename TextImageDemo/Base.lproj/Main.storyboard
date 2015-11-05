@@ -85,7 +85,7 @@
         <!--文本编辑-->
         <scene sceneID="vfJ-O0-xSC">
             <objects>
-                <viewController id="r3F-jU-GlG" customClass="EditViewController" customModule="TextImageDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditViewController" id="r3F-jU-GlG" customClass="EditViewController" customModule="TextImageDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hxB-Bv-Jiv"/>
                         <viewControllerLayoutGuide type="bottom" id="7O0-Cm-93F"/>
