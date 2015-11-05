@@ -62,18 +62,42 @@
 		A610FCCE1BEB2B2D00DB0372 /* TextImageDemo */ = {
 			isa = PBXGroup;
 			children = (
-				A610FCCF1BEB2B2D00DB0372 /* AppDelegate.swift */,
-				A610FCD11BEB2B2D00DB0372 /* ViewController.swift */,
-				A610FCE11BEB2C6500DB0372 /* EditViewController.swift */,
-				A610FCE31BEB2E8A00DB0372 /* TextItemTableViewCell.swift */,
-				A610FCE51BEB334300DB0372 /* ItemModel.swift */,
-				A610FCE71BEB3CBC00DB0372 /* Constant.swift */,
 				A610FCD31BEB2B2D00DB0372 /* Main.storyboard */,
-				A610FCD61BEB2B2D00DB0372 /* Assets.xcassets */,
 				A610FCD81BEB2B2D00DB0372 /* LaunchScreen.storyboard */,
+				A610FCCF1BEB2B2D00DB0372 /* AppDelegate.swift */,
+				A610FCEB1BEB3EE900DB0372 /* Model */,
+				A610FCEA1BEB3EE300DB0372 /* View */,
+				A610FCE91BEB3EDA00DB0372 /* ViewController */,
+				A610FCD61BEB2B2D00DB0372 /* Assets.xcassets */,
 				A610FCDB1BEB2B2D00DB0372 /* Info.plist */,
 			);
 			path = TextImageDemo;
+			sourceTree = "<group>";
+		};
+		A610FCE91BEB3EDA00DB0372 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A610FCD11BEB2B2D00DB0372 /* ViewController.swift */,
+				A610FCE11BEB2C6500DB0372 /* EditViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		A610FCEA1BEB3EE300DB0372 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A610FCE31BEB2E8A00DB0372 /* TextItemTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A610FCEB1BEB3EE900DB0372 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A610FCE51BEB334300DB0372 /* ItemModel.swift */,
+				A610FCE71BEB3CBC00DB0372 /* Constant.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
