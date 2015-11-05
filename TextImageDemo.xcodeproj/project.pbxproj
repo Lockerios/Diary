@@ -15,6 +15,7 @@
 		A610FCE21BEB2C6500DB0372 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A610FCE11BEB2C6500DB0372 /* EditViewController.swift */; };
 		A610FCE41BEB2E8A00DB0372 /* TextItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A610FCE31BEB2E8A00DB0372 /* TextItemTableViewCell.swift */; };
 		A610FCE61BEB334300DB0372 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A610FCE51BEB334300DB0372 /* ItemModel.swift */; };
+		A610FCE81BEB3CBC00DB0372 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A610FCE71BEB3CBC00DB0372 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A610FCE11BEB2C6500DB0372 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		A610FCE31BEB2E8A00DB0372 /* TextItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextItemTableViewCell.swift; sourceTree = "<group>"; };
 		A610FCE51BEB334300DB0372 /* ItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		A610FCE71BEB3CBC00DB0372 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				A610FCE11BEB2C6500DB0372 /* EditViewController.swift */,
 				A610FCE31BEB2E8A00DB0372 /* TextItemTableViewCell.swift */,
 				A610FCE51BEB334300DB0372 /* ItemModel.swift */,
+				A610FCE71BEB3CBC00DB0372 /* Constant.swift */,
 				A610FCD31BEB2B2D00DB0372 /* Main.storyboard */,
 				A610FCD61BEB2B2D00DB0372 /* Assets.xcassets */,
 				A610FCD81BEB2B2D00DB0372 /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 				A610FCE41BEB2E8A00DB0372 /* TextItemTableViewCell.swift in Sources */,
 				A610FCD01BEB2B2D00DB0372 /* AppDelegate.swift in Sources */,
 				A610FCE21BEB2C6500DB0372 /* EditViewController.swift in Sources */,
+				A610FCE81BEB3CBC00DB0372 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
