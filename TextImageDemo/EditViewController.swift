@@ -101,8 +101,13 @@ class EditViewController: UIViewController, UITextViewDelegate, UIImagePickerCon
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         print(image)
         
+        let imageSize = image.size;
+        let width = textView.textContainer.size.width*2/2
+        let height = width*imageSize.height/imageSize.width*2/2;
+        
         let imageTA = NSTextAttachment()
         imageTA.image = image
+        imageTA.bounds = CGRectMake(0, 0, width, height)
         
         let imageAtt = NSAttributedString(attachment: imageTA)
         
