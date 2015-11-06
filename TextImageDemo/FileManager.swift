@@ -27,7 +27,7 @@ class FileManager {
     
     //MARK: - Methods
     
-    func p_createFolder() {
+    private func p_createFolder() {
         let paths = NSSearchPathForDirectoriesInDomains(.LibraryDirectory, .UserDomainMask, true)
         let libDirectory = paths[0]
         let documentsDirectory = libDirectory+"/Caches/"
@@ -47,31 +47,18 @@ class FileManager {
     }
     
     func p_saveCache(obj: AnyObject,cacheFileName: String) {
-        do {
-            let jsonData = try NSJSONSerialization.dataWithJSONObject(obj, options: .PrettyPrinted)
-
-            p_write(jsonData, saveFileName: cacheFileName, filePath: filePath)
-            
-            print("saved success")
-        } catch is NSError {
-            print("json transform error")
-        }
+        let data = NSKeyedArchiver.archivedDataWithRootObject(obj)
+        p_write(data, saveFileName: cacheFileName, filePath: filePath)
     }
     
     func p_readCache(fileName: String) -> (AnyObject) {
         let data = p_read(fileName, filePath: filePath)
-        do {
-            let jsonObj = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
-            
-            return jsonObj
-        } catch is NSError {
-            print("read json error")
-            
-            return ""
-        }
+        let obj = NSKeyedUnarchiver.unarchiveObjectWithData(data)
+
+        return obj!
     }
     
-    func p_read(saveFileName: String, filePath: String) -> (NSData) {
+    private func p_read(saveFileName: String, filePath: String) -> (NSData) {
         let fileName = saveFileName+".txt"
         let backSlash = filePath+"/"
         let fileAtPath = backSlash+fileName
@@ -81,7 +68,7 @@ class FileManager {
         return data!
     }
     
-    func p_write(data: NSData, saveFileName: String, filePath: String) {
+    private func p_write(data: NSData, saveFileName: String, filePath: String) {
         let fileName = saveFileName+".txt"
         let backSlash = filePath+"/"
         let fileAtPath = backSlash+fileName

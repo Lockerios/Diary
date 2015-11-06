@@ -21,6 +21,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //存储对象
+        let str = "hello" as NSString
+        
+        FileManager.sharedFileManager.p_saveCache(str, cacheFileName: "hello")
+
+        //读取对象
+        let readStr = FileManager.sharedFileManager.p_readCache("hello")
+
+        print(readStr)
     }
     
     override func viewWillAppear(animated: Bool) {
