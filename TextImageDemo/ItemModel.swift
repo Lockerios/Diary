@@ -33,6 +33,10 @@ class ItemModel {
     
     //MARK: - Methods
     
+    func p_setItems(ary: [ItemEntity]) {
+        ItemArray = ary
+    }
+    
     func p_getAllItem() -> [ItemEntity] {
         return ItemArray
     }

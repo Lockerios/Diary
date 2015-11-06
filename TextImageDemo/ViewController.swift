@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     let cellIdentifier = "cellidentifier"
+    let kCountKey = "CountKey"
     
     var dataSource = []
     
@@ -20,16 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //存储对象
-        let str = "hello" as NSString
-        
-        FileManager.sharedFileManager.p_saveCache(str, cacheFileName: "hello")
-
-        //读取对象
-        let readStr = FileManager.sharedFileManager.p_readCache("hello")
-
-        print(readStr)
+    
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -60,6 +52,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         tableView.reloadData()
     }
+    
+    @IBAction func p_saveAll(sender: AnyObject) {
+        for (var i=0;i<dataSource.count;i++) {
+            let entity = dataSource[i] as! ItemEntity
+            
+            FileManager.sharedFileManager.p_saveCache(entity.itemString, cacheFileName: "\(i)")
+        }
+        
+        NSUserDefaults.standardUserDefaults().setInteger(dataSource.count, forKey: kCountKey)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    @IBAction func p_readAll(sender: AnyObject) {
+        let count = NSUserDefaults.standardUserDefaults().integerForKey(kCountKey)
+        
+        var ary = [ItemEntity]()
+        for (var i=0;i<count;i++) {
+            let itemString = FileManager.sharedFileManager.p_readCache("\(i)")
+            let entity = ItemEntity(itemString: itemString as! NSAttributedString)
+            ary.append(entity)
+        }
+        
+        ItemModel.sharedItemModel.p_setItems(ary)
+        
+        p_refresh()
+    }
+    
     
     //MARK: - Actions
     

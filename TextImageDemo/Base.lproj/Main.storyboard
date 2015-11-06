@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--图文列表-->
@@ -68,6 +69,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="图文列表" id="OVi-zi-BLD">
+                        <leftBarButtonItems>
+                            <barButtonItem title="存储" id="Ny4-8A-Hsl">
+                                <connections>
+                                    <action selector="p_saveAll:" destination="BYZ-38-t0r" id="dFk-UE-eKC"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="读取" id="Th1-O7-CIP">
+                                <connections>
+                                    <action selector="p_readAll:" destination="BYZ-38-t0r" id="xgF-ee-rTu"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" title="新建" id="AcN-fV-zsF">
                             <connections>
                                 <segue destination="r3F-jU-GlG" kind="show" id="RQp-RB-lao"/>
