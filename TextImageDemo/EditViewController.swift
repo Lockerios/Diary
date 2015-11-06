@@ -83,6 +83,8 @@ class EditViewController: UIViewController, UITextViewDelegate, UIImagePickerCon
     @IBAction func p_save(sender: AnyObject) {
         ItemModel.sharedItemModel.p_addItem(ItemEntity.init(itemString: textView.attributedText))
         
+        
+        
         self.navigationController?.popViewControllerAnimated(true)
     }
 

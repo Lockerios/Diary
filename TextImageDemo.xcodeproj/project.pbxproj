@@ -16,6 +16,7 @@
 		A610FCE41BEB2E8A00DB0372 /* TextItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A610FCE31BEB2E8A00DB0372 /* TextItemTableViewCell.swift */; };
 		A610FCE61BEB334300DB0372 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A610FCE51BEB334300DB0372 /* ItemModel.swift */; };
 		A610FCE81BEB3CBC00DB0372 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A610FCE71BEB3CBC00DB0372 /* Constant.swift */; };
+		A660D5FC1BEC4DB7005000E8 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A660D5FB1BEC4DB7005000E8 /* FileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A610FCE31BEB2E8A00DB0372 /* TextItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextItemTableViewCell.swift; sourceTree = "<group>"; };
 		A610FCE51BEB334300DB0372 /* ItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		A610FCE71BEB3CBC00DB0372 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		A660D5FB1BEC4DB7005000E8 /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				A610FCE51BEB334300DB0372 /* ItemModel.swift */,
 				A610FCE71BEB3CBC00DB0372 /* Constant.swift */,
+				A660D5FB1BEC4DB7005000E8 /* FileManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				A610FCE61BEB334300DB0372 /* ItemModel.swift in Sources */,
 				A610FCD21BEB2B2D00DB0372 /* ViewController.swift in Sources */,
 				A610FCE41BEB2E8A00DB0372 /* TextItemTableViewCell.swift in Sources */,
+				A660D5FC1BEC4DB7005000E8 /* FileManager.swift in Sources */,
 				A610FCD01BEB2B2D00DB0372 /* AppDelegate.swift in Sources */,
 				A610FCE21BEB2C6500DB0372 /* EditViewController.swift in Sources */,
 				A610FCE81BEB3CBC00DB0372 /* Constant.swift in Sources */,
@@ -324,6 +328,7 @@
 				A610FCE01BEB2B2D00DB0372 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
